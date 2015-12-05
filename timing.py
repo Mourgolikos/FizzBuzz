@@ -10,8 +10,8 @@ def secondsToStr(t):
 line = "="*40
 def log(s, elapsed=None):  #timing.log(s) in order to get running time in a crucial point while running (s variable as a description to the reason log was called)
     print(line)
-    secs =  clock()
-    print(secondsToStr(secs), '-', s)
+    secs =  clock() - elapsed if elapsed else clock()
+    print(str(secs), '-', s)
     if elapsed:
         print("Elapsed time:", elapsed)
     print(line+'\n')
@@ -20,7 +20,7 @@ def log(s, elapsed=None):  #timing.log(s) in order to get running time in a cruc
 def endlog():
     end = clock()
     elapsed = end-start
-    log("End Program", secondsToStr(elapsed))
+    log("End Program", elapsed)
 
 def now():
     return secondsToStr(clock())
