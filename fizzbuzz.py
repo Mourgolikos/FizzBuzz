@@ -10,6 +10,7 @@ FizzBuzz Challenge Description:
     For multiples of 3 and 5, print "FizzBuzz" instead of the number
     Extra: Print a new line after each case
 '''
+import timing # With the import the time starts counting!
 ##########
 #First Try. Keeping it simple and readable
 ##########
@@ -24,3 +25,4 @@ for i in range(1, 101):
         print("Buzz\n")
         continue
     print(str(i) + '\n')
+firstTryTime = timing.log("Finished First Try")
